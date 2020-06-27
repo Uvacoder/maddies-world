@@ -1,0 +1,57 @@
+/**************************
+* Navigation Styling
+**************************/
+
+nav .navbar-nav li a {
+    color: #fff !important;
+}
+
+nav .navbar-nav li a:hover, .active {
+    text-decoration: underline;
+}
+
+.active {
+    color: #d5d542 !important;
+}
+
+.navbar-brand {
+    color: #fff !important;
+    font-size: 1.5em;
+}
+
+nav .navbar-nav li a {
+    padding: 0 20px !important;
+}
+
+nav {
+    height: 10%;
+}
+
+.navbar-inverse .navbar-toggle {
+    border: 1px solid #fff !important;
+}
+
+.navbar-inverse .navbar-toggle .icon-bar {
+    color: #fff !important;
+}
+
+nav .nav-item {
+    font-size: 1.3em;
+}
+
+/* Makes navbar brand smaller on phones */
+
+@media screen and (max-width: 426px) {
+    .navbar-brand {
+        font-size: 1.4em !important;
+    }
+    .nav-item {
+        font-size: 1em !important;
+    }
+}
+
+@media screen and (max-width: 321px) {
+    .navbar-brand {
+        font-size: 1.1em !important;
+    }
+}

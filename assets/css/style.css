@@ -1,0 +1,583 @@
+/**************************
+* General Styling
+**************************/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: lightgray;
+}
+
+h1, h2, h3, h4, h5, h6, p, a {
+    color: #fff;
+    font-weight: 400;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/**************************
+* Home Page
+**************************/
+
+.cb-slideshow, .cb-slideshow:after {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 0;
+}
+
+.cb-slideshow:after {
+    content: '';
+    background: transparent url(../img/pattern.png) repeat top left;
+}
+
+.cb-slideshow li span {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color: transparent;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: none;
+    opacity: 0;
+    z-index: 0;
+    animation: imageAnimation 36s linear infinite 0s;
+}
+
+.cb-slideshow li div {
+    z-index: 1000;
+    position: absolute;
+    bottom: 30px;
+    left: 0px;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    color: #fff;
+    animation: titleAnimation 36s linear infinite 0s;
+}
+
+.cb-slideshow li div h3 {
+    font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
+    font-size: 240px;
+    padding: 0;
+    line-height: 200px;
+}
+
+.cb-slideshow li:nth-child(1) span {
+    background-image: url(../img/1.jpg)
+}
+
+.cb-slideshow li:nth-child(2) span {
+    background-image: url(../img/2.jpg);
+    animation-delay: 6s;
+}
+
+.cb-slideshow li:nth-child(3) span {
+    background-image: url(../img/3.jpg);
+    animation-delay: 12s;
+}
+
+.cb-slideshow li:nth-child(4) span {
+    background-image: url(../img/4.jpg);
+    animation-delay: 18s;
+}
+
+.cb-slideshow li:nth-child(5) span {
+    background-image: url(../img/5.jpg);
+    animation-delay: 24s;
+}
+
+.cb-slideshow li:nth-child(6) span {
+    background-image: url(../img/6.jpg);
+    animation-delay: 30s;
+}
+
+.cb-slideshow li:nth-child(2) div {
+    animation-delay: 6s;
+}
+
+.cb-slideshow li:nth-child(3) div {
+    animation-delay: 12s;
+}
+
+.cb-slideshow li:nth-child(4) div {
+    animation-delay: 18s;
+}
+
+.cb-slideshow li:nth-child(5) div {
+    animation-delay: 24s;
+}
+
+.cb-slideshow li:nth-child(6) div {
+    animation-delay: 30s;
+}
+
+@keyframes imageAnimation {
+    0% {
+        opacity: 0;
+        animation-timing-function: ease-in;
+    }
+    8% {
+        opacity: 1;
+        animation-timing-function: ease-out;
+    }
+    17% {
+        opacity: 1
+    }
+    25% {
+        opacity: 0
+    }
+    100% {
+        opacity: 0
+    }
+}
+
+.no-cssanimations .cb-slideshow li span {
+    opacity: 1;
+}
+
+@media screen and (max-width: 1140px) {
+    .cb-slideshow li div h3 {
+        font-size: 140px
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .cb-slideshow li div h3 {
+        font-size: 80px
+    }
+}
+
+.container-text-home {
+    position: relative;
+    text-align: center;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.centered h4, .centered h1, .centered .btn-container {
+    text-align: center;
+}
+
+.centered h4 {
+    font-size: 1.2em;
+}
+
+.centered h1 {
+    font-size: 4em;
+    color: #d5d542;
+}
+
+.btn {
+    color: #d5d542;
+    border: #d5d542 solid 1px;
+    border-radius: 12px;
+    padding: 10px;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #d5d542;
+}
+
+.btn:hover {
+    color: #fff;
+    background-color: #d5d542;
+    opacity: .5;
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    border: 1px solid #d5d542;
+    color: #d5d542;
+    opacity: .5;
+}
+
+/* large phones and smaller */
+
+@media screen and (max-width: 426px) {
+    .centered h1 {
+        font-size: 3em;
+    }
+    .btn {
+        border-radius: 10px;
+        padding: 8px;
+    }
+}
+
+/**************************
+* About Page
+**************************/
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.div1 {
+    grid-area: 1 / 1 / 2 / 2;
+    height: 100vh;
+    position: relative;
+}
+
+.div1::after {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    opacity: 0.7;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: url("../img/about-background.jpg");
+    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.6);
+    background-position: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: .4;
+}
+
+.div2 {
+    grid-area: 1 / 2 / 2 / 3;
+    height: 100vh;
+    background-image: url("../img/about-portrait.jpg");
+    background-position: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+/* On tablet the columns stack */
+
+@media screen and (max-width: 769px) {
+    .parent {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+    }
+    .div1 {
+        grid-area: 2 / 1 / 3 / 2;
+        height: 100vh;
+    }
+    .div2 {
+        grid-area: 1 / 1 / 2 / 2;
+        height: 100vh;
+    }
+}
+
+.text-wrapper {
+    transform: translateY(35%);
+}
+
+.parent .div1 .text-wrapper h1 {
+    font-size: 3em;
+    color: #d5d542;
+    padding: 5px 0;
+}
+
+.parent .div1 .text-wrapper h2 {
+    font-size: 1.3em;
+    padding: 5px 0;
+}
+
+.parent .div1 .text-wrapper p {
+    padding: 5px 0;
+}
+
+.ci {
+    text-decoration: none;
+    list-style: none;
+    color: #fff;
+}
+
+.social-btns {
+    list-style: none;
+}
+
+.social-btns li {
+    float: left;
+    padding: 0 10px 0 0;
+}
+
+.fa {
+    color: #d5d542;
+}
+
+/* small laptop and smaller */
+
+@media screen and (max-width: 1025px) {
+    .parent .div1 .text-wrapper h1 {
+        font-size: 2em;
+    }
+    .parent .div1 .text-wrapper h2 {
+        font-size: .7em;
+    }
+    .parent .div1 .text-wrapper p {
+        font-size: .9em;
+    }
+}
+
+/* large phone and smaller */
+
+@media screen and (max-width: 426px) {
+    .text-wrapper {
+        transform: translateY(15%);
+    }
+}
+
+/* small phones */
+
+@media screen and (max-width: 426px) {
+    .parent .div1 .text-wrapper p {
+        font-size: .8em;
+    }
+    .text-wrapper {
+        transform: translateY(20%);
+    }
+}
+
+/**************************
+* Portfolio Page
+**************************/
+
+div.scrollmenu {
+    overflow: auto;
+    white-space: nowrap;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+div.scrollmenu a {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    width: 40%;
+    padding: 0;
+    margin: 0;
+}
+
+div.scrollmenu a:hover {
+    opacity: .7;
+}
+
+.caption-portfolio {
+    transform: translateY(600%);
+    font-size: 3em;
+}
+
+.img-portfolio {
+    height: 100%;
+    width: 100%;
+    background-image: url(../img/1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.img-portfolio1 {
+    height: 100%;
+    width: 100%;
+    background-image: url(../img/2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.img-portfolio2 {
+    height: 100%;
+    width: 100%;
+    background-image: url(../img/3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.img-portfolio3 {
+    height: 100%;
+    width: 100%;
+    background-image: url(../img/4.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.img-portfolio4 {
+    height: 100%;
+    width: 100%;
+    background-image: url(../img/5.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+@media screen and (max-width: 769px) {
+    div.scrollmenu a {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    div.scrollmenu a {
+        width: 90%;
+    }
+}
+
+/**************************
+* Contact Page
+**************************/
+
+.bg-image {
+    background-image: url(../img/contact.jpg);
+    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100vh;
+    background-position: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.container-text-contact {
+    position: relative;
+    text-align: center;
+}
+
+.container-text-contact .centered-contact h1 {
+    text-align: center;
+    color: #d5d542;
+    font-size: 3em;
+    padding: 30px 0;
+}
+
+.container-text-contact .centered-contact h4, .container-text-contact .centered-contact h5 {
+    text-align: center;
+    padding: 5px 0;
+    font-size: 1em;
+}
+
+.container-text-contact .centered-contact h5 {
+    color: #d5d542;
+}
+
+.centered-contact {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 80%);
+}
+
+.social-btns-c {
+    list-style: none;
+    transform: translateX(41.5%);
+    padding: 30px 0;
+}
+
+.social-btns-c li {
+    float: left;
+    padding: 0 10px 0 0;
+    font-size: 1.5em;
+}
+
+/* large phone and smaller */
+
+@media screen and (max-width: 426px) {
+    .container-text-contact .centered-contact h1 {
+        font-size: 2.6em;
+        padding: 0;
+    }
+    .container-text-contact .centered-contact h4, .container-text-contact .centered-contact h5 {
+        padding: 10px 0;
+        font-size: .9em;
+    }
+    .centered-contact {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 130%);
+    }
+    .social-btns-c {
+        padding: 20px 0;
+        transform: translateX(32%);
+    }
+    .social-btns-c li {
+        float: left;
+        padding: 0 10px 0 0;
+        font-size: 1.2em;
+    }
+}
+
+/* Medium phones and smaller */
+@media screen and (max-width: 376px) {
+    .container-text-contact .centered-contact h1 {
+        font-size: 2.5em;
+        padding: 0;
+    }
+    .container-text-contact .centered-contact h4, .container-text-contact .centered-contact h5 {
+        padding: 10px 0;
+        font-size: .8em;
+    }
+    .centered-contact {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 130%);
+    }
+    .social-btns-c {
+        padding: 20px 0;
+        transform: translateX(32%);
+    }
+    .social-btns-c li {
+        float: left;
+        padding: 0 10px 0 0;
+        font-size: 1.1em;
+    }
+}
+
+/* small phone */
+
+@media screen and (max-width: 321px) {
+    .container-text-contact .centered-contact h1 {
+        font-size: 2em;
+        padding: 0;
+    }
+    .container-text-contact .centered-contact h4, .container-text-contact .centered-contact h5 {
+        padding: 10px 0;
+        font-size: .6em;
+    }
+    .centered-contact {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 130%);
+    }
+    .social-btns-c {
+        padding: 15px 0;
+        transform: translateX(32%);
+    }
+    .social-btns-c li {
+        float: left;
+        padding: 0 8px 0 0;
+        font-size: .8em;
+    }
+}

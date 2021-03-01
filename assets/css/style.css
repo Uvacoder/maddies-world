@@ -13,8 +13,9 @@ body {
 
 h1, h2, h3, h4, h5, h6, p, a {
     color: #fff;
-    font-weight: 400;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'ArchitectsDaughterRegular'; 
+    font-weight: normal; 
+    font-style: normal; 
 }
 
 /**************************

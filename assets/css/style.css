@@ -85,17 +85,17 @@ h1, h2, h3, h4, h5, h6, p, a {
 }
 
 .cb-slideshow li:nth-child(4) span {
-    background-image: url(../img/4.jpg);
+    background-image: url(../img/lil-horse.jpg);
     animation-delay: 18s;
 }
 
 .cb-slideshow li:nth-child(5) span {
-    background-image: url(../img/5.jpg);
+    background-image: url(../img/lil-treehug.jpg);
     animation-delay: 24s;
 }
 
 .cb-slideshow li:nth-child(6) span {
-    background-image: url(../img/6.jpg);
+    background-image: url(../img/lil-home.jpg);
     animation-delay: 30s;
 }
 
